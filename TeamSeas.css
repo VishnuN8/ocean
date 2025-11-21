@@ -1,0 +1,191 @@
+    body{
+        margin: 0;
+        font-family: monospace;
+        background: linear-gradient(90deg,  rgb(69, 117, 207), skyblue );
+        text-align: center;
+    }
+
+    h1{
+        font-size: 3em;
+        margin: 20px 0;
+        transition: color 1s, transform 1s;
+
+    }
+
+    h1:hover{
+        transform: scale(1.2);
+        color: yellow;
+
+
+    }
+
+    .scene{
+        position: relative;
+        height: 90vh;
+        overflow: hidden;
+
+    }
+
+    .sun{
+        position: absolute;
+        top: 40px;
+        right: 50px;
+        width: 100px;
+        height: 100px;
+        background: yellow;
+        border-radius: 50%;
+        transition: backgroung-color 5s transform 2s;
+
+    }
+
+
+    .sun:hover{
+        color: goldenrod;
+        transform: scale(1.2);
+
+    }
+
+    .cloud{
+        position: absolute;
+        top: 80px;
+        width: 120px;
+        height: 60px;
+        background: white;
+        border-radius: 50%;
+        transition: transform 3s ease-in-out;
+
+
+    }
+
+    .cloud::before,.cloud::after{
+        content: '';
+        position: absolute;
+        background: white;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        top: -20%;
+
+
+    }
+
+    .cloud::before{
+        left: -40px;
+    }
+    .cloud::after{
+        right: -40px;
+    }
+    .cloud1{
+        left: 50px;
+
+    }
+    .cloud2{
+        left: 250px; top: 100px;
+        
+    }
+
+    .cloud1:hover{
+        transform: translateX(400px) 
+    }
+
+    .cloud2:hover{
+        transform: translateX(400px) ;
+
+    }
+
+    .ocean{
+        position: relative;
+        height: 700px;
+        background: linear-gradient(to top, darkblue, blue );
+        overflow: hidden;
+    }
+
+    .fish{
+        position: absolute;
+        bottom: 50%;
+        left: -80px;
+        width: 125px;
+        height: 80px;
+        background-color: goldenrod;
+        border-radius: 50% 50% 50% 0;
+        transform:rotate(10deg);
+        animation:swim 10s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+    }
+
+    .fish::after{
+        content:"";
+        position: absolute;
+        left: -30px;
+        top: 30px;
+        width:0;
+        height:0 ;
+        border-top: 50px solid transparent;
+        border-bottom: 50px solid transparent;
+        border-left: 35px solid orange;
+
+    }
+
+
+
+    .fish::before{
+        content: "";
+        position:absolute;
+        right: 25px;
+        top: 16px;
+        width: 12px;
+        height: 12px;
+        background-color: black;
+        border-radius: 50%;
+        box-shadow: -3px -3px 0 0 rgb(255, 255, 255);
+
+    }
+
+
+
+    @keyframes swim{
+        
+        to{left: 750px};
+        to{right: 750px};
+    }
+
+    .footer p{
+        margin: 0;
+        opacity:0.8;
+        background-color: blue;
+    }
+
+    .footer{
+        background-color: blue;
+
+    }
+
+    @media(max-width:600px){
+
+        .cloud{
+            max-width: 600px;
+            width: -70%;
+        }
+
+        .sun{
+            max-width: 600px;
+            width: -70%;
+        }
+
+        .fish{
+            max-width: 600px;
+            width: -70%;
+        }
+
+        .ocean{
+            max-width: 600px;
+            width: -70%;
+        }
+
+        h1{
+            max-width: 600px;
+            width: -70%;
+        }
+
+    }
